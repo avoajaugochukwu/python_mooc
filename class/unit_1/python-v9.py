@@ -28,8 +28,6 @@ def selSort(L):
 		L[minIndx] = temp
 		# print 'Partialy sorted list =', L
 
-selSortL = [100, 1000, 30, 27, 99, 20, 26, 76, 29]
-selSort(selSortL)
 
 
 def merge(left, right, lt):
@@ -60,14 +58,17 @@ def sort(L, lt = lambda x, y: x < y):
 		return L[:]
 	else:
 		middle = int(len(L) / 2)
+		print '>>>>>>', L[:middle], L[middle:], len(L)
 		left = sort(L[:middle], lt)
+		print '#'
 		right = sort(L[middle:], lt)
-		print left, right
+		print left, right, '<<<<<<<'
 		return merge(left, right, lt)
 
-# L = [35, 4, 5, 29, 17, 58, 0]
-# newL = sort(L)
-# print 'Sorted list =', newL
+L = [35, 4, 5, 29, 17, 58, 0]
+print L
+newL = sort(L)
+print 'Sorted list =', newL
 
 # L = [1.0, 2.25, 24.5, 12.0, 2.0, 23.0, 19.125, 1.0]
 # newL = sort(L, float.__lt__)
