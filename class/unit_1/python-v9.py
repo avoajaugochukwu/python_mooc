@@ -58,11 +58,12 @@ def sort(L, lt = lambda x, y: x < y):
 		return L[:]
 	else:
 		middle = int(len(L) / 2)
-		print '>>>>>>', L[:middle], L[middle:], len(L)
+		# print '>>>>>>', L[:middle], L[middle:], len(L)
 		left = sort(L[:middle], lt)
-		print '#'
+		# print '#'
 		right = sort(L[middle:], lt)
-		print left, right, '<<<<<<<'
+		# print left, right, '<<<<<<<'
+		print 'about to merge ', left, ' and ', right
 		return merge(left, right, lt)
 
 L = [35, 4, 5, 29, 17, 58, 0]
