@@ -87,7 +87,10 @@ def readVal(valType, requestMsg, errorMsg):
 	raise TypeError('Num tries exceeded')
 # print readVal(int, 'Enter int: ', 'Not an int.')
 
-# try:
-# 	readVal(int, 'Enter int: ', 'Not an int.')
-# except TypeError, s:
-# 	print s
+try:
+	readVal(int, 'Enter int: ', 'Not an int.')
+except TypeError, s:
+	print s
+#or
+except:
+	print ' not'
