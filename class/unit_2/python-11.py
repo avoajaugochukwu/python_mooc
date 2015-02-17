@@ -101,6 +101,7 @@ class Person(object):
 me = Person('Avoaja Ugochukwu')
 
 
+
 class MITPerson(Person):
 	nextIdNum = 0
 	def __init__(self, name):
