@@ -29,4 +29,4 @@ def h(x):
 	return answer
 
 x = 1329
-print h(x)
+print fact(5)

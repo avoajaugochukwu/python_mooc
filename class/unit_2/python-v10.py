@@ -7,6 +7,7 @@ def create():
 		hSet.append([])
 	return hSet
 
+
 def hashElem(e):
 	global numBuckets
 	return e%numBuckets
@@ -25,7 +26,7 @@ def member(hSet, i):
 	return i in hSet[hashElem(i)]
 
 numBuckets = 47
-def testl():
+def test1():
 	s = create()
 	for i in range(40):
 		insert(s, i)
@@ -69,21 +70,24 @@ def test2():
 
 
 #--------------------------------------
-#Another
+#Exception
 def readVal(valType, requestMsg, errorMsg):
 	numTries = 0
 	while numTries < 4:
-		val = raw_input(requestMsge)
+		val = raw_input(requestMsg)
 		try:
 			val = valType(val)
 			return val
-		except ValError:
+		except ValueError:
 			print (errorMsg)
 			numTries += 1
 	raise TypeError('Num tries exceeded')
+
 print readVal(int, 'Enter int: ', 'Not an int.')
 
 try:
 	readVal(int, 'Enter int: ', 'Not an int.')
 except TypeError, s:
 	print s
+
+
