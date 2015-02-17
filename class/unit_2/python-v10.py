@@ -6,6 +6,7 @@ def create():
 	for i in range(numBuckets):
 		hSet.append([])
 	return hSet
+print create()
 
 
 def hashElem(e):
@@ -14,7 +15,7 @@ def hashElem(e):
 
 def insert(hSet, i):
 	hSet[hashElem(i)].append(i)
-
+ 
 def remove(hSet, i):
 	newBucket = []
 	for j in hSet[hashElem(i)]:
@@ -31,15 +32,18 @@ def test1():
 	for i in range(40):
 		insert(s, i)
 	insert(s, 325)
-	insert(s, 325)
-	insert(s, 987654321)
+	insert(s, 372)
+	# insert(s, 325)
+	# insert(s, 325)
+	# insert(s, 987654321)
 	print s
-	assert False
+	#assert False # added
+	# print member(s, 325)
+	# remove(s, 325)
+	print s
 	print member(s, 325)
-	remove(s, 325)
-	print member(s, 325)
-	print (s, 987654321)
-
+	# print (s, 987654321)
+testl()
 #--------------------------------------------#
 #Part 2
 def hashElem(e):
@@ -83,11 +87,14 @@ def readVal(valType, requestMsg, errorMsg):
 			numTries += 1
 	raise TypeError('Num tries exceeded')
 
+
 print readVal(int, 'Enter int: ', 'Not an int.')
 
 try:
 	readVal(int, 'Enter int: ', 'Not an int.')
 except TypeError, s:
 	print s
-
+#or
+# except:
+# 	print ' not'
 
