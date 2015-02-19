@@ -175,3 +175,34 @@ class UG(MITPerson):
 
 class G(MITPerson):
 	pass
+
+
+m1 = MITPerson('barbara Beaver')
+ug1 = UG('Jane Doe')
+ug2 = UG('John Doe')
+g1 = G('Mitch Peabody')
+g2 = G('Ryan Jackson')
+g3 = G('Sarina Canelake')
+SixHundred = CourseList('6.00')
+SixHundred.addStudent(ug1)
+SixHundred.addStudent(g1)
+SixHundred.addStudent(ug2)
+
+try:
+	SixHundred.addStudent(m1)
+except:
+	print 'Whoops'
+print SixHundred #perhaps not what i expected
+
+SixHundred.remStudent(g3)
+print 'students'
+for s in  SixHundred.allStudents():
+	print s
+
+print 'students Squared'
+for s in SixHundred.allStudents():
+	for sl in SixHundred.allStudents():
+		print s, l
+print 'Undergraduate'
+for u in SixHundred.ugs():
+	print u
