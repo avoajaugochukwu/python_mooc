@@ -98,27 +98,27 @@ class Person(object):
 		#return self's name
 		return self.name
 
-me = Person('Avoaja Ugochukwu')
-him = Person('Barack Hussein Obama')
-her = Person('madonna')
-print him
-print him.getLastName()
-him.setBirthday(datetime.date(1961, 8, 9))
-her.setBirthday(datetime.date(1958, 8, 16))
-print him.getAge()
-print her.getAge()
-pList = [me, him, her]
-print 'The people in pList are'
-for p in pList:
-	print '   ' + str(p)
+# me = Person('Avoaja Ugochukwu')
+# him = Person('Barack Hussein Obama')
+# her = Person('madonna')
+# print him
+# print him.getLastName()
+# him.setBirthday(datetime.date(1961, 8, 9))
+# her.setBirthday(datetime.date(1958, 8, 16))
+# print him.getAge()
+# print her.getAge()
+# pList = [me, him, her]
+# print 'The people in pList are'
+# for p in pList:
+# 	print '   ' + str(p)
 
 
-class MITPerson(Person):
+class MITPerson(Person):  #check this later
 	nextIdNum = 0
 	def __init__(self, name):
 		Person.__init__(self, name)
-		self.idNum = MITPerson.nextIdNum
 		MITPerson.nextIdNum += 1
+		self.idNum = MITPerson.nextIdNum
 
 	def getIdNum(self):
 		return self.idNum
@@ -128,6 +128,15 @@ class MITPerson(Person):
 
 	def isStudent(self):
 		return type(self) == UG or type(self) == G
+
+
+ugo = MITPerson('Avoaja')
+cha = MITPerson('Charles')
+print ugo.getIdNum()
+print cha.getIdNum()
+print ugo
+print cha
+
 
 class CourseList(object):
 	def __init__(self, number):
@@ -187,22 +196,22 @@ SixHundred = CourseList('6.00')
 SixHundred.addStudent(ug1)
 SixHundred.addStudent(g1)
 SixHundred.addStudent(ug2)
-
-try:
-	SixHundred.addStudent(m1)
-except:
-	print 'Whoops'
-print SixHundred #perhaps not what i expected
+print SixHundred.allStudents()
+# try:
+# 	SixHundred.addStudent(m1)
+# except:
+# 	print 'Whoops'
+# print SixHundred #perhaps not what i expected
 
 SixHundred.remStudent(g3)
 print 'students'
 for s in  SixHundred.allStudents():
 	print s
 
-print 'students Squared'
-for s in SixHundred.allStudents():
-	for sl in SixHundred.allStudents():
-		print s, l
-print 'Undergraduate'
-for u in SixHundred.ugs():
-	print u
+# print 'students Squared'
+# for s in SixHundred.allStudents():
+# 	for sl in SixHundred.allStudents():
+# 		print s, sl
+# print 'Undergraduate'
+# for u in SixHundred.ugs():
+# 	print u

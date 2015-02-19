@@ -1,0 +1,24 @@
+Yield: is a generator
+	- is a function that remembers the point in the function body where it last returned, plus
+	> local variable || generators do not store values permanently hence saving memory when working with a large dataset
+
+	==> Yield is going to keep track of its place, when called a second time, it remembers its state and returns the next value
+
+	[[ Look at it as lying between a print and a return statement
+		 while a return statement will terminate the function a print statement will print its values which renders them useless 
+		 for further computation ]]
+===============================
+SIMULATION
+===============================
+
+Analytical Models
+-----------------
+	-Predict behaviour given some initial conditions and some parameters
+
+Simulation Methods
+	- Estimate what my happen given conditions and doing that multiple times 
+	- Some systems are not mathematically tractable
+	- Successfully refining series of simulation
+	- Easy to extract intermediate result that building
+	- approximation to reality
+	- descriptive not prescriptive
