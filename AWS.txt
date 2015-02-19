@@ -1,0 +1,23 @@
+Using AWS
+after you create an account
+login to your account, click on your name then click on security credentials
+
+click on Access Keys (Access Keys ID and Secret Access Key)
+
+
+amazon gives you private key just once
+putty key used to convert public key to private key
+
+PSCP: used to transfer file just like FTP just private key and address of server
+
+Amazon allows you to create elastic IP to use to tag your server
+
+EC2 Elastic Cloud Virtual Server
+S3 - Media file && static file
+
+
+
+Create Server
+Launch Application
+
+If you launch with elastic BeanStalk it creates a server, which you can see on your dashboard|| you can check the status on your dashboard
