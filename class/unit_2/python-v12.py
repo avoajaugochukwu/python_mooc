@@ -77,8 +77,19 @@ def simWalks(numSteps, numTrials):
 	return distances 
 
 def drunkTest(numTrials): 
-	for numSteps in [10, 100, 1000, 10000, 100000]: 
-		distances = simWalks(numSteps, numTrials) 
-		print 'Random walk of ' + str(numSteps) + ' steps' 
-		print ' Mean =', sum(distances)/len(distances) 
+	# for numSteps in [10, 100, 1000, 10000, 100000]:
+	for numSteps in [0, 1]:
+		distances = simWalks(numSteps, numTrials)
+		print 'Random walk of ' + str(numSteps) + ' steps'
+		print ' Mean =', sum(distances)/len(distances)
 		print ' Max =', max(distances), 'Min =', min(distances)
+
+
+peter = Drunk('peter')
+origin = Location(0,0)
+f = Field()
+f.addDrunk(peter, origin)
+
+print walk(f, peter, 10)
+
+drunkTest(10)
