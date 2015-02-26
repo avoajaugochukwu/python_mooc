@@ -40,4 +40,23 @@ You must have requirements.txt file in your root directory so that AWS can parse
 Deployment
 ==========
 use git|| AWS provides more commands to extend git for automatic deployment
-1. eb init
+1. eb init for new instance
+Or git aws.push
+
+
+
+Use of Virtual Server
+Amazon gives you public DNS... 
+Then using elastic IP creat an IP and associate it with an instance
+Put the elastic IP in putty || if you use the public DNS it can change but elastic IP cannot change
+In the security register your ip for SSH and MYSQL
+
+
+On putty for authentication
+click SSH on the Left side then click Auth
+
+puttygen to generate private key from public key
+
+After that you get cmd for login: enter ec2-user
+Grant admin privilege Admin Access: sudo su - ( so you can install anything)
+On amazon go to security group
