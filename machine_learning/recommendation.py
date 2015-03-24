@@ -1,5 +1,5 @@
 #A dictionary of critics and their ratings of movies
-
+from math import sqrt
 critics = {
   'Lisa Rose':
     {
@@ -59,7 +59,7 @@ critics = {
     },
 }
 #Returns a distance-based similarity score for person1 and person2
-def sim_distance(prefs, person1, person2):
+def euclidean_distance(prefs, person1, person2):
 	# Get the list of shared_items
 	si = {}
 	for item in prefs[person1]:
@@ -81,11 +81,46 @@ def sim_distance(prefs, person1, person2):
 
 	return 1 / (1 + sum_of_squares)
 
-for j in critics:
-	for k in critics:
-		if j != k:
-			print j, k
-			print sim_distance(critics, j, k)
-# print sim_distance(critics, 'Lisa Rose', 'Gene Seymour')
-# print sim_distance(critics, 'Toby', 'Gene Seymour')
-# print sim_distance(critics, 'Toby', 'Micheal Phillips')
+# for j in critics:
+# 	for k in critics:
+# 		if j != k:
+# 			print j, k
+# 			print euclidean_distance(critics, j, k)
+
+# Return the pearson correlation coefficient
+def pearson_correlation(prefs, p1, p2):
+  # Get the list of mutually rated items
+  si = {}
+  for item in prefs[p1]:
+    if item in prefs[p2]:
+      si[item] = 1
+  print si
+  n = len(si)
+
+  if n == 0:
+    return 0
+
+  # Add all preferences
+  sum1  = sum([prefs[p1][i] for i in si])
+  sum2  = sum([prefs[p2][i] for i in si])
+
+
+  # Sum up the sqaures
+  sum1Sq = sum([pow(prefs[p1][i], 2) for i in si])
+  sum2Sq = sum([pow(prefs[p2][i], 2) for i in si])
+
+  # Sum up the products
+  pSum = sum([prefs[p1][i] * prefs[p2][i] for i in si])
+
+  #Calculate Pearson score
+  num = pSum - (sum1 * sum2)
+  den = sqrt(abs(sum1Sq - pow(sum1, 2))) * sqrt(abs(sum2Sq - pow(sum2, 2)))
+
+  if den == 0:
+    return 0
+
+  r = num / den
+
+  return r
+
+print pearson_correlation(critics, 'Lisa Rose', 'Gene Seymour')
