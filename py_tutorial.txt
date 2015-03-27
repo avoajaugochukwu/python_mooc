@@ -22,3 +22,9 @@ Simulation Methods
 	- Easy to extract intermediate result that building
 	- approximation to reality
 	- descriptive not prescriptive
+
+===========================================
+Using Django Dumpdata
+===========================================
+mkdir polls/fixtures
+python manage.py dumpdata polls --indent=4 > polls/fixtures/polls_views_testdata.json
